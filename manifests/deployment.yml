@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: firastimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: firastimage
+  template:
+    metadata:
+      labels:
+        app: firastimage 
+    spec:
+      containers:
+        - name: firastimage 
+          image: firstcr1.azurecr.io/firastimage
+          ports:
+          - containerPort: 80
